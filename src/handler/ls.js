@@ -4,9 +4,17 @@ import { resolve } from "path"
 export const list = async () => {
     try {
         const currentPath = resolve(process.cwd())
-        console.log(currentPath)
         const files = await fs.readdir(currentPath);
-        console.table(files);
+        const fileList = [];
+        for (const file of files) {
+          const filePath = resolve(currentPath, file);
+          const stats = await fs.stat(filePath);
+          const fileType = stats.isFile() ? 'File' : 'Directory';
+    
+          fileList.push({ File: file, Type: fileType });
+        }
+    
+        console.table(fileList);
     } catch(err){
         console.error('Operation failed')
     }
