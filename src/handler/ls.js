@@ -1,5 +1,6 @@
 import { promises as fs} from 'fs';
 import { resolve } from "path"
+import { getCurrentDir } from '../helper/index.js';
 
 export const list = async () => {
     try {
@@ -15,6 +16,7 @@ export const list = async () => {
         }
     
         console.table(fileList);
+        getCurrentDir()
     } catch(err){
         console.error('Operation failed')
     }
