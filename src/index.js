@@ -11,8 +11,6 @@ import { inputCommand } from './helper/inputCommand.js';
 
 process.chdir(os.homedir());
 
-// const username = args['--username'] ? args['--username'] : 'stranger';
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -25,8 +23,17 @@ myEmitter
     .on('up', dirUp)
 
 const startFileManager = async () => {
-  console.log('Welcome to the File Manager');
-  console.info(os.homedir());
+  const args = process.argv.slice(2);
+
+  let username = 'stranger';
+  for (const arg of args) {
+    if (arg.startsWith('--username=')) {
+      username = arg.split('=')[1];
+      break;
+    }
+  }
+  console.log(`Welcome to the File Manager, ${username}!`);
+  console.info('You are currently in', os.homedir());
 
   rl.on('line', (input) => inputCommand(input, myEmitter))
     .on('close', ()=> {

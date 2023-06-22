@@ -1,4 +1,4 @@
 export function getCurrentDir() {
     const currentDirectory = process.cwd();
-    console.info(currentDirectory);
+    console.info('You are currently in', currentDirectory);
   }
