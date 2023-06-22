@@ -6,6 +6,7 @@ import {
     changeDir,
     dirUp, 
 } from './handler/index.js';
+import { inputCommand } from './helper/inputCommand.js';
 
 
 process.chdir(os.homedir());
@@ -28,20 +29,11 @@ const startFileManager = async () => {
   console.info(os.homedir());
 
   // Прослушка ввода нужно отдельно вынести как функцию
-  rl.on('line', (input) => {
-    const [command, ...args] = input.split(' ');
-    if (command === 'ls') {
-      myEmitter.emit('ls');
-    } else if (command === 'cd') {
-      myEmitter.emit('cd', args);
-    } else if (command === 'up') {
-      myEmitter.emit('up', args);
-    }
-  })
-  .on('close', ()=> {
-    console.log('Goodbuy M****F*****');
-    process.nextTick(()=> exit());
-  });
+  rl.on('line', (input) => inputCommand(input, myEmitter))
+    .on('close', ()=> {
+      console.log('Goodbuy M****F*****');
+      process.nextTick(()=> exit());
+    });
 
   const exit = () => {
     process.exit(0);
