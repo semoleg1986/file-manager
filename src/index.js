@@ -37,7 +37,7 @@ const startFileManager = async () => {
 
   rl.on('line', (input) => inputCommand(input, myEmitter))
     .on('close', ()=> {
-      console.log('Goodbuy M****F*****');
+      console.log(`Thank you for using File Manager, ${username}, goodbye!`);
       process.nextTick(()=> exit());
     });
 
