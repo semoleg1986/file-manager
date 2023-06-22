@@ -28,7 +28,6 @@ const startFileManager = async () => {
   console.log('Welcome to the File Manager');
   console.info(os.homedir());
 
-  // Прослушка ввода нужно отдельно вынести как функцию
   rl.on('line', (input) => inputCommand(input, myEmitter))
     .on('close', ()=> {
       console.log('Goodbuy M****F*****');
