@@ -25,10 +25,9 @@ const startFileManager = async () => {
   console.log('Welcome to the File Manager');
   console.log(os.homedir());
 
-  // Прослушка ввода нужна отдельно вынести функцию
+  // Прослушка ввода нужно отдельно вынести как функцию
   rl.on('line', (input) => {
     const [command, ...args] = input.split(' ');
-
     if (command === 'ls') {
       myEmitter.emit('ls');
     } else if (command === 'cd') {
