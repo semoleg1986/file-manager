@@ -7,6 +7,7 @@ import {
     dirUp,
     readFile,
     addFile,
+    removeFile,
 } from './handler/index.js';
 import { inputCommand } from './helper/inputCommand.js';
 
@@ -26,6 +27,7 @@ myEmitter
     .on('up', dirUp)
     .on('cat', readFile)
     .on('add', addFile)
+    .on('rm', removeFile)
 
 const startFileManager = async () => {
   const args = process.argv.slice(2);
