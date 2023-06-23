@@ -1,9 +1,9 @@
-import { getCurrentDir } from "../helper/index.js"
+import { dispCurrentDir } from "../helper/index.js"
 
 export const changeDir = async ([pathToDirectory]) => {
     try{
         process.chdir(pathToDirectory)
-        getCurrentDir()
+        dispCurrentDir()
     } catch(err){
         console.error('Operation failed')
     }   
