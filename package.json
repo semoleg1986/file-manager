@@ -4,7 +4,7 @@
   "description": "rsschool task 2",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js --username=semoleg1986",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Oleg Semenov",
