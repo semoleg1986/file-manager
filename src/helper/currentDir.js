@@ -7,6 +7,5 @@ export function dispCurrentDir() {
 
 export function getCurrentDir() {
   const currentDirectory = process.cwd();
-  console.log(typeof currentDirectory)
-  return dirname(currentDirectory)
+  return currentDirectory
 }
