@@ -6,7 +6,6 @@ export const addFile = async (fileName) => {
     let newFile;
     try {
       const currentPath = getCurrentDir();
-      console.log(currentPath)
       const filePath = resolve(currentPath, String(fileName));
       newFile = await fs.open(filePath, 'w');
       dispCurrentDir();
