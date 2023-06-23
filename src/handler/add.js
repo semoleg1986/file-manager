@@ -1,17 +1,25 @@
 import { resolve } from "path";
-import { dispCurrentDir, getCurrentDir } from "../helper/index.js";
-import { promises as fs} from 'fs';
+import { dispCurrentDir } from "../helper/index.js";
+import { promises as fs } from 'fs';
 
 export const addFile = async (fileName) => {
+  const currentPath = resolve(process.cwd());
+  const filePath = resolve(currentPath, String(fileName));
+  console.log(currentPath);
+  console.log(filePath);
+  
+  try {
+    await fs.access(filePath, fs.constants.F_OK);
+    console.error('File already exists');
+  } catch (err) {
     let newFile;
     try {
-      const currentPath = getCurrentDir();
-      const filePath = resolve(currentPath, String(fileName));
       newFile = await fs.open(filePath, 'w');
-      dispCurrentDir();
     } catch (err) {
       console.error(err);
     } finally {
       newFile?.close();
+      dispCurrentDir();
     }
-  };
+  }
+};
