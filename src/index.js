@@ -12,6 +12,7 @@ import {
   rnHandler,
   cpHandler,
   mvHandler,
+  hashHandler,
 } from './handler/index.js'
 import { osHandler } from './handler/os/index.js';
 
@@ -38,6 +39,7 @@ myEmitter
     .on('cp', cpHandler)
     .on('mv', mvHandler)
     .on('os', osHandler)
+    .on('hash', hashHandler)
 
 
 const startFileManager = async () => {
