@@ -1,8 +1,8 @@
 import { promises as fs} from 'fs';
 import { resolve } from "path"
-import { dispCurrentDir } from '../helper/index.js';
+import { dispCurrentDir } from '../../helper/index.js';
 
-export const list = async (pathDir) => {
+export const lsHandler = async (pathDir) => {
     try {
         let currentPath
         if (pathDir){

@@ -1,7 +1,7 @@
-import { dispCurrentDir } from "../helper/index.js";
+import { dispCurrentDir } from "../../helper/index.js";
 import os from 'os';
 
-export const changeDir = async ([pathToDirectory]=[]) => {
+export const cdHandler = async ([pathToDirectory]=[]) => {
     try{
         if (!pathToDirectory || pathToDirectory.length === 0){
             process.chdir(os.homedir())

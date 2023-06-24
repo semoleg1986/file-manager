@@ -1,8 +1,8 @@
 import { resolve } from "path";
-import { dispCurrentDir } from "../helper/index.js";
+import { dispCurrentDir } from "../../helper/index.js";
 import { promises as fs } from 'fs';
 
-export const addFile = async (fileName) => {
+export const addHandler = async (fileName) => {
   const currentPath = resolve(process.cwd());
   const filePath = resolve(currentPath, String(fileName));
   console.log(currentPath);

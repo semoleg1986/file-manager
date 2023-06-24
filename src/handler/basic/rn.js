@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import { resolve } from "path";
 
-export async function renameFile(oldName, newName){
+export async function rnHandler(oldName, newName){
     const currentPath = resolve(process.cwd());
     const oldPath = resolve(currentPath, String(oldName));
     const newPath = resolve(currentPath, String(newName));

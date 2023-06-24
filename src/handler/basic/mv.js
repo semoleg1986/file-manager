@@ -7,7 +7,7 @@ const pipelineAsync = promisify(pipeline);
 const accessAsync = promisify(access);
 const unlinkAsync = promisify(unlink);
 
-export const moveFile = async (pathToFile, pathToNewDirectory) => {
+export const mvHandler = async (pathToFile, pathToNewDirectory) => {
   try {
     const fileName = basename(pathToFile);
     const sourcePath = resolve(process.cwd(), pathToFile);

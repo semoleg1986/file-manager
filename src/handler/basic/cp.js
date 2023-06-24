@@ -1,7 +1,7 @@
 import { createReadStream, createWriteStream, promises as fs } from 'fs';
 import { resolve, basename, dirname } from 'path';
 
-export const copyDir = async (pathToFile, pathToNewDirectory) => {
+export const cpHandler = async (pathToFile, pathToNewDirectory) => {
   try {
     const fileName = basename(pathToFile);
     const sourcePath = resolve(process.cwd(), pathToFile);

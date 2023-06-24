@@ -1,8 +1,8 @@
 import { promises as fs } from 'fs';
 import { resolve } from "path";
-import { dispCurrentDir } from '../helper/index.js';
+import { dispCurrentDir } from '../../helper/index.js';
 
-export const removeFile = async (fileName) => {
+export const rmHandler = async (fileName) => {
     try {
         const currentPath = resolve(process.cwd());
         const filePath = resolve(currentPath, String(fileName));

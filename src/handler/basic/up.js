@@ -1,7 +1,7 @@
-import { dispCurrentDir } from '../helper/index.js';
+import { dispCurrentDir } from '../../helper/index.js';
 import { resolve } from 'path';
 
-export const dirUp = async () => {
+export const upHandler = async () => {
     try {
         const currentPath = resolve(process.cwd());
         const rootPath = resolve('/');
