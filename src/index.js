@@ -1,18 +1,20 @@
 import os from 'os';
 import EventEmitter from 'events';
 import readline from 'readline';
-import { 
-    list,
-    changeDir,
-    dirUp,
-    readFile,
-    addFile,
-    removeFile,
-    renameFile,
-    copyDir,
-    moveFile,
-} from './handler/index.js';
 import { inputCommand } from './helper/inputCommand.js';
+import {
+  lsHandler,
+  cdHandler,
+  upHandler,
+  catHandler,
+  addHandler,
+  rmHandler,
+  rnHandler,
+  cpHandler,
+  mvHandler,
+} from './handler/index.js'
+import { osHandler } from './handler/os/index.js';
+
 
 let shouldExit = false;
 
@@ -26,15 +28,16 @@ const myEmitter = new EventEmitter();
 myEmitter.setMaxListeners(0)
 
 myEmitter
-    .on('ls', list)
-    .on('cd', changeDir)
-    .on('up', dirUp)
-    .on('cat', readFile)
-    .on('add', addFile)
-    .on('rm', removeFile)
-    .on('rn', renameFile)
-    .on('cp', copyDir)
-    .on('mv', moveFile)
+    .on('ls', lsHandler)
+    .on('cd', cdHandler)
+    .on('up', upHandler)
+    .on('cat', catHandler)
+    .on('add', addHandler)
+    .on('rm', rmHandler)
+    .on('rn', rnHandler)
+    .on('cp', cpHandler)
+    .on('mv', mvHandler)
+    .on('os', osHandler)
 
 
 const startFileManager = async () => {
