@@ -64,17 +64,13 @@ const startFileManager = async () => {
   rl.on('line', (input) => inputCommand(input, myEmitter, rl))
     .on('SIGINT', () => {
       if (shouldExit) {
-        exit();
+        rl.close()
       } else {
         shouldExit = true;
         console.log('Press Ctrl+C again to exit.');
       }})
     .on('close', ()=> {
       console.log(`Thank you for using File Manager, ${username}, goodbye!`);
-      exit();
     });
 };
-  const exit = () => {
-    process.exit(0);
-  }
 await startFileManager();
