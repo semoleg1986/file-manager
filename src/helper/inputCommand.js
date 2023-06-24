@@ -3,7 +3,7 @@ import { dispCurrentDir } from "./currentDir.js";
 export const inputCommand = (input, myEmitter, rl) => {
   const [command, ...args] = input.split(' ');
   console.log(args[0])
-  const command_list = ['ls', 'cd', 'up', 'cat', 'add', 'rm', 'rn','cp','mv','.exit', 'os', 'hash', 'compress', 'decompress'];
+  const command_list = ['ls', 'cd', 'up', 'cat', 'add', 'rm', 'rn','cp','mv','.exit', 'os', 'hash', 'compress', 'decompress', 'clear'];
 
   if (command_list.includes(command)) {
     if (args.length === 1)  {

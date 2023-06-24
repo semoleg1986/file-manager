@@ -15,6 +15,7 @@ import {
   hashHandler,
   compressFile,
   decompressFile,
+  clearHandler,
 } from './handler/index.js'
 import { osHandler } from './handler/os/index.js';
 
@@ -44,6 +45,7 @@ myEmitter
     .on('hash', hashHandler)
     .on('compress', compressFile)
     .on('decompress', decompressFile)
+    .on('clear', clearHandler)
 
 
 const startFileManager = async () => {

@@ -16,3 +16,4 @@ export const mvHandler = basic.mvHandler;
 export const hashHandler = hash.hashHandler;
 export const compressFile = zip.compressFile;
 export const decompressFile = zip.decompressFile;
+export const clearHandler = basic.clearHandler;
