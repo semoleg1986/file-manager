@@ -1,4 +1,5 @@
 import os from 'os';
+import { dispCurrentDir } from '../../helper/index.js';
 
 export const getCPUs = async () => {
   try {
@@ -14,6 +15,7 @@ export const getCPUs = async () => {
       console.log(`CPU ${index + 1}:`);
       console.log(`  Model: ${model}`);
       console.log(`  Clock Rate: ${clockRate} GHz`);
+      dispCurrentDir()
     });
   } catch (error) {
     console.error('Failed to retrieve CPU information:', error);
