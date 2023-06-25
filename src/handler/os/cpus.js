@@ -14,10 +14,11 @@ export const getCPUs = async () => {
 
       console.log(`CPU ${index + 1}:`);
       console.log(`  Model: ${model}`);
-      console.log(`  Clock Rate: ${clockRate} GHz`);
-      dispCurrentDir()
+      console.log(`  Speed: ${speed}`)
     });
+    dispCurrentDir()
   } catch (error) {
-    console.error('Failed to retrieve CPU information:', error);
+    console.error('Operation failed');
+    dispCurrentDir()
   }
 };

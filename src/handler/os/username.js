@@ -8,7 +8,8 @@ export const getUsername = async () => {
     console.log(`Current User Name: ${username}`);
     dispCurrentDir();
   } catch (error) {
-    console.error('Failed to retrieve current user name:', error);
+    console.error('Operation failed');
+    dispCurrentDir()
   }
 };
 

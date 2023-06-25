@@ -7,6 +7,7 @@ export const getHomeDir = async () => {
     console.log(`Home Directory: ${homeDir}`);
     dispCurrentDir();
   } catch (error) {
-    console.error('Failed to retrieve home directory:', error);
+    console.error('Operation failed');
+    dispCurrentDir()
   }
 };

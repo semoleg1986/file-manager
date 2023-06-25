@@ -5,7 +5,6 @@ import { getHomeDir } from "./homedir.js";
 import { getUsername } from "./username.js";
 
 export const osHandler = async (arg) =>{
-    console.log(arg)
     switch (String(arg)) {
         case '--EOL':
           getEOL();
@@ -19,7 +18,7 @@ export const osHandler = async (arg) =>{
         case '--username':
           getUsername();
           break;
-        case '--arch':
+        case '--architecture':
           getArchitecture();
           break;
         default:

@@ -7,7 +7,8 @@ export const getArchitecture = async () => {
     console.log(`CPU Architecture: ${architecture}`);
     dispCurrentDir()
   } catch (error) {
-    console.error('Failed to retrieve CPU architecture:', error);
+    console.error('Operation failed');
+    dispCurrentDir()
   }
 };
 
