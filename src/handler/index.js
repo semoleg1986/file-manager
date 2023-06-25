@@ -1,12 +1,13 @@
+import * as dir from './dir/index.js';
 import * as basic from './basic/index.js';
 import * as hash from './hash/index.js';
 import * as zip from './zip/index.js';
 
 
 
-export const lsHandler = basic.lsHandler;
-export const cdHandler = basic.cdHandler;
-export const upHandler = basic.upHandler;
+export const lsHandler = dir.lsHandler;
+export const cdHandler = dir.cdHandler;
+export const upHandler = dir.upHandler;
 export const catHandler = basic.catHandler;
 export const addHandler = basic.addHandler;
 export const rmHandler = basic.rmHandler;
