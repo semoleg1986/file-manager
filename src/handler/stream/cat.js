@@ -1,4 +1,4 @@
-import { createReadStream, constants } from 'fs';
+import { createReadStream } from 'fs';
 import { resolve } from 'path';
 import { dispCurrentDir } from '../../helper/index.js';
 

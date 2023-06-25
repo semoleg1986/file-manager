@@ -42,5 +42,6 @@ export const lsHandler = async (pathDir) => {
     } 
     catch(err) {
         console.error('Operation failed')
+        dispCurrentDir();
     }
 };

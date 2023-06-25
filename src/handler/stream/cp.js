@@ -1,11 +1,13 @@
 import { createReadStream, createWriteStream, promises as fs } from 'fs';
 import { resolve, basename, dirname } from 'path';
+import { dispCurrentDir } from '../../helper/index.js';
 
 export const cpHandler = async (pathToFile, pathToNewDirectory) => {
   try {
     const fileName = basename(pathToFile);
     const sourcePath = resolve(process.cwd(), pathToFile);
-    const destinationPath = resolve(process.cwd(), pathToNewDirectory, fileName);
+    const homeDir = os.homedir()
+    const destinationPath = resolve(homeDir, pathToNewDirectory, fileName);
     const destinationDir = dirname(destinationPath);
 
     const fileExists = await fs.access(sourcePath)
@@ -31,7 +33,7 @@ export const cpHandler = async (pathToFile, pathToNewDirectory) => {
       .catch(() => false);
 
     if (fileInDestinationExists) {
-      console.error('File with the same name already exists in the destination directory');
+      console.error('Operation failed');
       return;
     }
 
@@ -47,7 +49,9 @@ export const cpHandler = async (pathToFile, pathToNewDirectory) => {
     });
 
     console.log('File copied successfully');
+    dispCurrentDir();
   } catch (error) {
     console.error('Operation failed');
+    dispCurrentDir();
   }
 };
