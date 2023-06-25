@@ -9,7 +9,7 @@ export const catHandler = async (fileName) => {
     const readStream = createReadStream(filePath, { encoding: 'utf-8' });
 
     readStream.on('error', (error) => {
-      console.error('Error reading the file:', error);
+      console.error('Operation failed');
       readStream.destroy();
     });
 

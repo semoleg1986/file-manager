@@ -10,13 +10,13 @@ export const addHandler = async (fileName) => {
   
   try {
     await fs.access(filePath, fs.constants.F_OK);
-    console.error('File already exists');
+    console.error('Operation failed');
   } catch (err) {
     let newFile;
     try {
       newFile = await fs.open(filePath, 'w');
     } catch (err) {
-      console.error(err);
+      console.error('Operation failed');
     } finally {
       newFile?.close();
       dispCurrentDir();

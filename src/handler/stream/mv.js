@@ -13,10 +13,8 @@ export const mvHandler = async (pathToFile, pathToNewDirectory) => {
     const sourcePath = resolve(process.cwd(), pathToFile);
     const destinationPath = resolve(process.cwd(), pathToNewDirectory, fileName);
 
-    // Check if the file exists at the old path
     await accessAsync(sourcePath);
 
-    // Check if the file exists at the new path
     try {
       await accessAsync(destinationPath);
       console.error('Operation failed');
