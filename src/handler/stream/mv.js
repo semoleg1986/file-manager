@@ -13,8 +13,7 @@ export const mvHandler = async (pathToFile, pathToNewDirectory) => {
   try {
     const fileName = basename(pathToFile);
     const sourcePath = resolve(process.cwd(), pathToFile);
-    const homeDir = os.homedir()
-    const destinationPath = resolve(homeDir, pathToNewDirectory, fileName);
+    const destinationPath = resolve(process.cwd(), pathToNewDirectory, fileName);
 
     await accessAsync(sourcePath);
 
