@@ -8,6 +8,7 @@ import * as zip from './zip/index.js';
 export const lsHandler = dir.lsHandler;
 export const cdHandler = dir.cdHandler;
 export const upHandler = dir.upHandler;
+export const clearHandler = dir.clearHandler;
 export const catHandler = basic.catHandler;
 export const addHandler = basic.addHandler;
 export const rmHandler = basic.rmHandler;
@@ -17,4 +18,4 @@ export const mvHandler = basic.mvHandler;
 export const hashHandler = hash.hashHandler;
 export const compressFile = zip.compressFile;
 export const decompressFile = zip.decompressFile;
-export const clearHandler = basic.clearHandler;
+
