@@ -1,7 +1,7 @@
 import fs from 'fs';
 import zlib from 'zlib';
 import { dispCurrentDir } from '../../helper/index.js';
-import { resolve } from 'path';
+
 
 export async function decompressFile(filePath, destinationPath) {
     const fullFilePath = `${process.cwd()}/${filePath}`;

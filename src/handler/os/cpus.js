@@ -14,7 +14,7 @@ export const getCPUs = async () => {
 
       console.log(`CPU ${index + 1}:`);
       console.log(`  Model: ${model}`);
-      console.log(`  Speed: ${speed}`)
+      console.log(`  Clock Rate: ${clockRate} GHz`);
     });
     dispCurrentDir()
   } catch (error) {
