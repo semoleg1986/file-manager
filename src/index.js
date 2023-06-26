@@ -19,9 +19,6 @@ import {
 } from './handler/index.js'
 import { osHandler } from './handler/os/index.js';
 
-
-let shouldExit = false;
-
 process.chdir(os.homedir());
 
 const rl = readline.createInterface({
@@ -62,13 +59,6 @@ const startFileManager = async () => {
   console.info('You are currently in', os.homedir());
 
   rl.on('line', (input) => inputCommand(input, myEmitter, rl))
-    .on('SIGINT', () => {
-      if (shouldExit) {
-        rl.close()
-      } else {
-        shouldExit = true;
-        console.log('Press Ctrl+C again to exit.');
-      }})
     .on('close', ()=> {
       console.log(`Thank you for using File Manager, ${username}, goodbye!`);
     });
