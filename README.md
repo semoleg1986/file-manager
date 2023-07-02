@@ -48,3 +48,4 @@ Compress and decompress operations
 
     decompress [path_to_file] [path_to_destination] - decompress file.
 
+=
